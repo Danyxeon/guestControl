@@ -3,12 +3,11 @@ function onInit()
     RegisterEvent("onPlayerAuth","onPlayerAuth")
 end
 
-function onPlayerAuth(name)
+function onPlayerAuth(name, role, isGuest)
 
-	print("Checking " .. name .. " for 'guest'...")
-	if string.find(name, "guest") then
+	print("Checking " .. name .. " for guest status...")
+	if isGuest then
 		return "You have to be logged in to join the server."
-	else
-		print("All good, user clear to join.")
 	end
+
 end
